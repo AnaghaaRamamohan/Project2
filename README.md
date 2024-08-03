@@ -8,20 +8,19 @@ The proposed system design is divided into three main components:
 # System Description
 1.Functioning:
 The operation of this project is straightforward and explained as follows:
-2.Initial State:
 When there is no human movement, the ultrasonic sensor does not detect any individual, and its OUT pin remains LOW.
-3.Detection:
+2.Detection:
 When an individual enters the room, the sensor detects the presence through ultrasonic waves if the distance is less than 30cm (predefined threshold).
 Consequently, the output of the ultrasonic sensor goes HIGH.
-4.Arduino Trigger:
+3.Arduino Trigger:
 The Data OUT of the ultrasonic sensor is connected to Digital Pin 8 of the Arduino.
 When the sensor output is HIGH, the Arduino triggers the relay by setting the relay pin LOW (since the relay module is active LOW), turning the light ON.
-5.Light ON:
+4.Light ON:
 The light remains ON as long as there is movement within the sensor's range.
-6.No Movement:
+5.No Movement:
 When the person leaves the room, the distance between the sensor and the object exceeds 30cm.
 The Data OUT of the ultrasonic sensor goes LOW, causing the Arduino to turn OFF the relay (setting the relay pin HIGH), thereby turning the light OFF.
-7.Serial Monitor:
+6.Serial Monitor:
 The distance between the ultrasonic sensor and the object is displayed on the serial monitor, along with variations in the distances.
 
 # Implementation
